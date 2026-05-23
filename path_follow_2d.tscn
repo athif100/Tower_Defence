@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://df8607nwqod5s"]
+
+[ext_resource type="Script" uid="uid://brc2lydv1h5e" path="res://path_follow_2d.gd" id="1_0r80l"]
+[ext_resource type="PackedScene" uid="uid://3fmgcnuoo3oa" path="res://enemy.tscn" id="1_i0ksr"]
+
+[node name="PathFollow2D" type="PathFollow2D" unique_id=1285022347]
+rotates = false
+script = ExtResource("1_0r80l")
+
+[node name="Enemy" parent="." unique_id=1812282443 instance=ExtResource("1_i0ksr")]

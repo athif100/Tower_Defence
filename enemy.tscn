@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://3fmgcnuoo3oa"]
+
+[ext_resource type="Script" uid="uid://b2vy48vd37g83" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://bix20o640aokg" path="res://Simple Tower Defense(1)/Enemies/spr_zombie.png" id="2_qi2p4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iifgy"]
+atlas = ExtResource("2_qi2p4")
+region = Rect2(0, 0, 8, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epg4t"]
+atlas = ExtResource("2_qi2p4")
+region = Rect2(8, 0, 8, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yqyl"]
+atlas = ExtResource("2_qi2p4")
+region = Rect2(16, 0, 8, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wujgv"]
+atlas = ExtResource("2_qi2p4")
+region = Rect2(24, 0, 8, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hb8ge"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iifgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epg4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yqyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wujgv")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1ltt"]
+size = Vector2(43, 36)
+
+[node name="Enemy" type="Area2D" unique_id=1812282443]
+rotation = -1.5707964
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_4gyqm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1179820840]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_hb8ge")
+animation = &"Walk"
+frame_progress = 0.3312785
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=715300363]
+position = Vector2(-0.5, -3)
+shape = SubResource("RectangleShape2D_e1ltt")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=76567430]
+offset_left = -38.0
+offset_top = -52.0
+offset_right = -5.0
+offset_bottom = -25.0
+value = 50.0
