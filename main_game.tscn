@@ -49,7 +49,7 @@ _data = {
 }
 point_count = 11
 
-[node name="Main Game" type="Node2D" unique_id=840452173]
+[node name="Main Game" type="Node2D" unique_id=840452173 groups=["Main"]]
 position = Vector2(0, 1)
 script = ExtResource("1_ykeeq")
 Ogenemy = ExtResource("4_6bm6p")

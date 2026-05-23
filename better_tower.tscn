@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://p2nwfnowyde1"]
+
+[ext_resource type="Script" uid="uid://4hcg1jkbjyor" path="res://better_tower.gd" id="1_n0g4b"]
+[ext_resource type="Texture2D" uid="uid://m0kw5qdmoswh" path="res://Simple Tower Defense(1)/Towers/Combat Towers/spr_tower_cannon.png" id="2_nfuyk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uw3y3"]
+radius = 61.204575
+
+[node name="Better_tower" type="Area2D" unique_id=790092249]
+collision_mask = 2
+script = ExtResource("1_n0g4b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2043846240]
+position = Vector2(12.5, 10)
+scale = Vector2(2.3888888, 1.6666666)
+texture = ExtResource("2_nfuyk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1282488574]
+position = Vector2(13, 15)
+shape = SubResource("CircleShape2D_uw3y3")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

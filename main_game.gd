@@ -1,6 +1,7 @@
 extends Node2D
 @export
 var Ogenemy: PackedScene
+var OgBT=preload("res://better_tower.tscn")
 var Coins=50
 
 var OgTower=preload("res://tower.tscn")
@@ -15,7 +16,12 @@ func _process(delta: float) -> void:
 		clone.position=get_global_mouse_position()
 		add_child(clone)
 		Coins-=10
-		get_node("Label").text=str(Coins)
+	if Input.is_action_just_pressed("Add_better_tower")and Coins>29:
+		var clone=OgBT.instantiate()
+		clone.position=get_global_mouse_position()
+		add_child(clone)
+		Coins-=30
+	get_node("Label").text=str(Coins)
 
 func _on_timer_timeout() -> void:
 	 # Replace with function body.

@@ -1,7 +1,7 @@
 extends Area2D
 
 var Target:Area2D=null
-var Coins=50
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	queue_redraw()
 	#damage enemy
 	if Target!=null:
-		Target.Health-=1
+		Target.Health-=3
 func _draw():
 	if Target!=null:
 		var Enemy_position=to_local(Target.global_position)
